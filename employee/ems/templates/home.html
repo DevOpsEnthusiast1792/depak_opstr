@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="btn btn-primary">
+  <center><a href="/show" class="btn btn-primary">View all record</a></center>
+</div>
+<div class="btn btn-primary">
+  <center><a href="/emp" class="btn btn-primary">Add New Record</a></center>
+</div>
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}
